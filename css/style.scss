@@ -366,6 +366,16 @@ section h2 {
 
     p {
       padding: 5px 0;
+
+      a {
+        list-style: none;
+        color: #000;
+
+        &:hover {
+          color: $accent-color;
+          transition: 0.4s;
+        }
+      }
     }
   }
 }

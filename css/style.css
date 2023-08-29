@@ -204,6 +204,14 @@ section h2 {
 .portfolios .caption p {
   padding: 5px 0;
 }
+.portfolios .caption p a {
+  list-style: none;
+  color: #000;
+}
+.portfolios .caption p a:hover {
+  color: #F2C12E;
+  transition: 0.4s;
+}
 
 .Hobbies h2 {
   text-align: center;
