@@ -1,0 +1,516 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-family: "Zen Maru Gothic", sans-serif;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.list {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 1.5em;
+  padding: 1em 0;
+}
+@media screen and (max-width: 768px) {
+  .list {
+    font-size: 1.3em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .list {
+    font-size: 0.8em;
+  }
+}
+.list li {
+  text-decoration: none;
+  margin: 0 0.75em;
+}
+.list li:last-child {
+  margin-right: 4em;
+}
+.list li a {
+  text-decoration: none;
+  color: #000000;
+  text-transform: none;
+  transition: 0.25s ease;
+  font-weight: 450;
+}
+.list li a:hover {
+  color: #F2C12E;
+  transition: 0.4s;
+  box-shadow: 0 2px 0 0 currentColor;
+}
+
+.mainVisual {
+  background-image: url(../images/mainvisual.webp);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+.mainVisual h1 {
+  color: #fff;
+  font-size: 5em;
+  padding-top: 4em;
+  padding-left: 2em;
+  margin-top: 0;
+  font-weight: 300;
+  font-family: "Edu SA Beginner", cursive;
+  font-family: "Poppins", sans-serif;
+  word-break: keep-all;
+}
+@media screen and (max-width: 480px) {
+  .mainVisual h1 {
+    padding-left: 30px;
+    font-size: 4em;
+  }
+}
+
+.content {
+  width: 65%;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 3em;
+  text-align: center;
+  font-weight: 400;
+  padding-top: 50px;
+}
+
+.About {
+  color: black;
+}
+.About h2 {
+  text-align: center;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid;
+}
+.About .profile {
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+.About .profile p {
+  padding-bottom: 1em;
+}
+.About .profile .mypic {
+  margin: auto;
+  width: 20%;
+  padding-bottom: 1em;
+}
+@media screen and (max-width: 480px) {
+  .About .profile .mypic {
+    width: 65%;
+  }
+}
+.About .profile .mypic img {
+  border-radius: 50%;
+  border: 2px solid #4d4d4d;
+}
+.About .career {
+  padding-right: 1.5em;
+  margin: 0 auto;
+}
+.About .line-left {
+  position: relative;
+  list-style: none;
+  padding-left: 40px;
+}
+.About .line-left dt {
+  font-size: 2em;
+}
+@media screen and (max-width: 768px) {
+  .About .line-left dt {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .About .line-left dt {
+    font-size: 0.8em;
+  }
+}
+.About .line-left dd {
+  margin-bottom: 2em;
+}
+.About .line-left dd::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  position: relative;
+  top: -3px;
+  left: -19px;
+  display: inline-block;
+  background-color: #000;
+  border-radius: 50%;
+}
+.About .line-left::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  background: #000;
+  position: absolute;
+  top: 6px;
+  left: 23.5px;
+}
+.About .line-left .indention {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .About .line-left .indention {
+    display: block;
+  }
+}
+.About #About {
+  margin-bottom: 1.5em;
+}
+
+.Portfolio h2 {
+  text-align: center;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid;
+}
+
+.portfolios {
+  text-align: center;
+}
+.portfolios .works {
+  display: inline-block;
+  border: 2px solid #4d4d4d;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30%;
+}
+@media screen and (max-width: 768px) {
+  .portfolios .works {
+    display: block;
+    width: 100%;
+  }
+}
+.portfolios .caption {
+  padding: 1em 0;
+}
+.portfolios .caption p {
+  padding: 5px 0;
+}
+
+.Hobbies h2 {
+  text-align: center;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid;
+}
+
+.icon-button {
+  display: flex;
+  font-size: 2em;
+  padding-bottom: 3em;
+}
+.icon-button .btn-down {
+  text-decoration: none;
+  color: black;
+  transition: 0.4s;
+}
+.icon-button .btn-down:hover {
+  background-color: #F2C12E;
+  color: #333333;
+  transition: 0.4s;
+}
+
+.photo h3 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1em;
+  font-weight: lighter;
+}
+
+.photos, .movies {
+  width: 50%;
+  padding: 0 20px;
+  text-align: center;
+}
+.photos a, .movies a {
+  font-size: 1em;
+  padding: 10px;
+  border: 2px solid #4d4d4d;
+  display: block;
+  border-radius: 999px;
+}
+@media screen and (max-width: 768px) {
+  .photos a, .movies a {
+    font-size: 0.5em;
+    border-radius: 999px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .photos a, .movies a {
+    border-radius: 50%;
+    font-size: 0.3em;
+  }
+}
+
+.triangle {
+  font-size: 10px;
+  align-items: center;
+}
+
+.photos i, .movies i {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.bird_photo, .landscape_photo {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media screen and (max-width: 480px) {
+  .bird_photo, .landscape_photo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.more {
+  text-align: center;
+  margin-bottom: 5em;
+}
+.more .more-btn {
+  align-items: center;
+  width: 50%;
+  min-width: 200px;
+  max-width: 600px;
+  padding: 30px;
+  box-sizing: border-box;
+  font-size: 1.5em;
+  margin: 2em 0;
+  border: 0.5px solid #333333;
+  border-radius: 999px;
+  background-color: #fff;
+  transition: 0.4s;
+}
+@media screen and (max-width: 480px) {
+  .more .more-btn {
+    color: #000;
+  }
+}
+.more .more-btn:hover {
+  background-color: #F2C12E;
+  color: #fff;
+  transition: 0.4s;
+}
+.more .more-photo {
+  display: none;
+}
+
+.bird img, .landscape img {
+  border: 2px solid #4d4d4d;
+  width: 80%;
+  margin-bottom: 3em;
+}
+
+.thumbnail {
+  /* width: 75px; */
+  /* width: 59%; */
+  padding-left: 40px;
+  margin-bottom: 5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+@media screen and (max-width: 480px) {
+  .thumbnail {
+    flex-flow: column;
+    width: 100%;
+    padding-left: 0;
+  }
+}
+.thumbnail img {
+  border: 2px solid #4d4d4d;
+  width: 61.5%;
+}
+@media screen and (max-width: 480px) {
+  .thumbnail img {
+    width: 100%;
+  }
+}
+.thumbnail p {
+  /* position: relative;
+  top: 20em;
+  left: 50em; */
+  font-size: 2em;
+  text-align: right;
+  padding-right: 40px;
+}
+
+figure img {
+  vertical-align: bottom;
+  gap: 0.1% 0.1%;
+}
+
+.movie {
+  text-align: center;
+}
+.movie h3 {
+  font-size: 2em;
+  font-weight: lighter;
+  margin-bottom: 1em;
+}
+
+.Contact h2 {
+  text-align: center;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid;
+}
+
+.icons {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em;
+}
+.icons i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  transform: translateY(-50%);
+  font-size: 2em;
+}
+.icons a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  border: 2px solid #4d4d4d;
+  border-radius: 50%;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+@media screen and (max-width: 480px) {
+  .icons a {
+    border: none;
+  }
+}
+.icons a.instagram:hover {
+  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  color: #fff;
+  transition: 1s;
+}
+.icons a.github:hover {
+  background: #171515;
+  color: #fff;
+}
+.icons a.twitter:hover {
+  background: #000;
+  color: #fff;
+}
+
+.form {
+  text-align: center;
+}
+
+form {
+  width: 40%;
+  margin: auto;
+  margin-top: 5em;
+}
+@media screen and (max-width: 1280px) {
+  form {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 768px) {
+  form {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 480px) {
+  form {
+    width: 100%;
+  }
+}
+form p {
+  padding-bottom: 10px;
+  text-align: left;
+}
+form textarea {
+  text-align: left;
+}
+form .send {
+  text-align: right;
+}
+form .send input {
+  border: 1.5px solid #4d4d4d;
+  border-radius: 999px;
+  padding: 10px;
+  background-color: #fff;
+  transition: all 0.4s;
+}
+@media screen and (max-width: 480px) {
+  form .send input {
+    color: #000;
+  }
+}
+form .send input:hover {
+  background-color: #F2C12E;
+  transition: all 0.4s;
+}
+
+.flex {
+  display: flex;
+}
+.flex p {
+  width: 100%;
+}
+.flex p:first-child {
+  width: 25%;
+}
+.flex input, .flex textarea {
+  display: block;
+  width: 100%;
+}
+
+.top-button {
+  width: 50px;
+  height: 50px;
+  float: right;
+}
+.top-button .return_top {
+  border: 2px solid #4d4d4d;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  padding: 0.5em;
+  text-align: center;
+  transition: all 0.4s;
+}
+.top-button .return_top:hover {
+  background-color: #F2C12E;
+  transition: all 0.4s;
+}
+.top-button .return_top i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  transform: translateY(-50%);
+  color: #000;
+}/*# sourceMappingURL=style.css.map */

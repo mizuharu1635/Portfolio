@@ -1,0 +1,720 @@
+// ==========変数==========//
+$border: 2px solid #4d4d4d;
+$accent-color: #F2C12E;
+$breakPoints: (
+  'pc': '1280px',
+  'tab': '768px',
+  'sp': '480px',
+  );
+
+// ==========mixin==========//
+@mixin h2-style {
+    text-align: center;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid;
+}
+@mixin text-font {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+@mixin mq ($breakPoint) {
+  @media screen and (max-width: #{map-get($breakPoints, $breakPoint)}) {
+    @content;
+  }
+}
+
+//スクロールアニメーション
+html { scroll-behavior: smooth;}
+
+* {
+    @include text-font;
+    // max-width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// ここからnav
+
+.list {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    list-style: none;
+    font-size: 1.5em;
+    padding: 1em 0;
+
+    @include mq(tab) {
+      font-size: 1.3em;
+    }
+
+    @include mq(sp) {
+      font-size: 0.8em;
+    }
+
+    li {
+        text-decoration: none;
+        margin: 0 0.75em;
+
+        &:last-child {
+            margin-right: 4em;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000;
+            text-transform: none;
+            transition: 0.25s ease;
+            font-weight: 450;
+
+            &:hover {
+                color: $accent-color;
+                transition: 0.4s;
+                box-shadow: 0 2px 0 0 currentColor;
+            }
+        }
+    }
+}
+
+
+
+
+// ここまでnav
+
+// ここからmainVisual
+
+.mainVisual {
+    background-image: url(../images/mainvisual.webp);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+
+    h1 {
+        color: #fff;
+        font-size: 5em;
+        padding-top: 4em;
+        padding-left: 2em;
+        margin-top: 0;
+        font-weight: 300;
+        font-family: 'Edu SA Beginner', cursive;
+        font-family: 'Poppins', sans-serif;
+        word-break: keep-all;
+
+        @include mq(sp) {
+          padding-left: 30px;
+          font-size: 4em;
+        }
+      }
+}
+
+// ここまでmainVisual
+
+// ここからcontent
+
+.content {
+    width: 65%;
+    margin: auto;
+}
+
+// ここからsection
+
+section h2 {
+    font-size: 3em;
+    text-align: center;
+    font-weight: 400;
+    padding-top: 50px;
+}
+
+// ここまでsection
+
+// ここからAbout
+
+.About {
+    color: black;
+
+    h2 {
+        @include h2-style;
+    }
+
+    .profile {
+        border: 1px solid gray;
+        border-radius: 8px;
+        padding: 2em;
+        margin-bottom: 2em;
+        text-align: center;
+
+        p {
+          padding-bottom: 1em;
+        }
+
+        .mypic {
+            margin: auto;
+            width: 20%;
+            padding-bottom: 1em;
+
+            @include mq(sp) {
+              width: 65%;
+            }
+
+            img {
+                border-radius: 50%;
+                border: $border;
+            }
+        }
+    }
+
+    .career {
+        padding-right: 1.5em;
+        margin: 0 auto;
+    }
+
+    .line-left {
+        position: relative;
+        list-style: none;
+        padding-left: 40px;
+
+        dt {
+          font-size: 2em;
+
+          @include mq(tab) {
+            font-size: 1em;
+          }
+          @include mq (sp) {
+            font-size: 0.8em;
+          }
+        }
+
+        dd {
+          margin-bottom: 2em;
+
+          &::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            position: relative;
+            top: -3px;
+            left: -19px;
+            display: inline-block;
+            background-color: #000;
+            border-radius: 50%;
+          }
+        }
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: 100%;
+          background: #000;
+          position: absolute;
+          top: 6px;
+          left: 23.5px;
+      }
+
+        .indention {
+          display: none;
+
+          @include mq (sp) {
+            display: block;
+          }
+        }
+
+        // &::before {
+        //   content: "";
+        //   width: 6px;
+        //   height: 6px;
+        //   position: relative;
+        //   top: -3px;
+        //   left: -19px;
+        //   display: inline-block;
+        //   background-color: #000;
+        //   border-radius: 50%;
+        // }
+
+        // &::before {
+        //     content: "";
+        //     display: inline-block;
+        //     width: 1px;
+        //     height: 100%;
+        //     background: #000;
+        //     position: absolute;
+        //     top: 6px;
+        //     left: 23.5px;
+        // }
+    }
+
+    #About {
+        margin-bottom: 1.5em;
+    }
+}
+
+// ここまでAbout
+
+// ここからSkills
+
+// .Skills {
+//     h2 {
+//         @include h2-style;
+//     }
+
+//     .icon {
+//         display: flex;
+//         justify-content: space-between;
+//         gap: 1%;
+//     }
+
+//     .skill {
+//         font-size: 3em;
+//         padding: 0.5em 0;
+//         position: relative;
+//         width: 13%;
+//         border: $border;
+//         border-radius: 8px;
+//         // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.15);
+//         &:hover {
+//             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.15);
+//         }
+//         i {
+//             width: 100%;
+//             text-align: center;
+//         }
+//         p {
+//             font-size: 0.35em;
+//             text-align: center;
+//         }
+//     }
+
+//     .comprehension {
+//         display: flex;
+//         justify-content: space-between;
+//         gap: 1%;
+//         padding: 1em 0;
+//         width: 13%;
+//     }
+
+//     .fa-html5 {
+//         color: #e34f26;
+//     }
+
+//     .fa-css3-alt {
+//         color: #35a8db;
+//     }
+
+//     .fa-sass {
+//         color: #CE679A;
+//     }
+
+//     .fa-square-js {
+//         color: #F7DF1E;
+//     }
+
+//     .fa-react {
+//         color: #61DAFB;
+//     }
+
+//     .fa-face-smile {
+//         color: #fcfc31;
+//     }
+
+//     .fa-php {
+//         color: #4F5D95;
+//     }
+
+//     .fa-wordpress {
+//         color: #21759B;
+//     }
+
+//     .fa-camera {
+//         color: #333333;
+//     }
+
+//     .fa-sliders {
+//         color: #001E36;
+//     }
+
+//     .stars {
+//         padding-left: 1.5em;
+//     }
+// }
+
+// ここまでSkills
+
+// ここからPortfolio
+
+.Portfolio h2 {
+    @include h2-style;
+}
+
+.portfolios {
+  text-align: center;
+  .works {
+    display: inline-block;
+    border: $border;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+
+    @include mq(tab) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .caption {
+    padding: 1em 0;
+
+    p {
+      padding: 5px 0;
+    }
+  }
+}
+
+
+// ここまでPortfolio
+
+// ここからHobbies
+
+.Hobbies h2 {
+    @include h2-style;
+  }
+  
+  .icon-button {
+    display: flex;
+    font-size: 2em;
+    padding-bottom: 3em;
+  
+    .btn-down {
+      text-decoration: none;
+      color: black;
+      transition: 0.4s;
+
+      &:hover {
+        background-color: $accent-color;
+        color: #333333;
+        transition: 0.4s;
+      }
+    }
+  }
+
+  .photo {
+
+    h3 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 1em;
+      font-weight: lighter;
+    }
+  }
+  
+  .photos, .movies {
+    width: 50%;
+    padding: 0 20px;
+    text-align: center;
+
+
+  
+    a {
+      font-size: 1em;
+      padding: 10px;
+      border: $border;
+      display: block;
+      border-radius: 999px;
+
+      @include mq(tab) {
+        font-size: 0.5em;
+        border-radius: 999px;
+      }
+      @include mq(sp) {
+        border-radius: 50%;
+        font-size: 0.3em;
+      }
+    }
+  }
+  
+  .triangle {
+    font-size: 10px;
+    align-items: center;
+  }
+  
+  .photos i, .movies i { 
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .bird_photo, .landscape_photo {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @include mq(sp) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .more {
+    text-align: center;
+    margin-bottom: 5em;
+
+    .more-btn {
+      align-items: center;
+      width: 50%;
+      min-width: 200px;
+      max-width: 600px;
+      padding: 30px;
+      box-sizing: border-box;
+      font-size: 1.5em;
+      margin: 2em 0;
+      border: 0.5px solid #333333;
+      border-radius: 999px;
+      background-color: #fff;
+      transition: 0.4s;
+
+      @include mq(sp) {
+        color: #000;
+      }
+
+      &:hover {
+        background-color: $accent-color;
+        color: #fff;
+        transition: 0.4s;
+      }
+    }
+
+    .more-photo {
+      display: none;
+    }
+  }
+  
+  .bird img, .landscape img {
+    border: $border;
+    width: 80%;
+    margin-bottom: 3em;
+  }
+  
+  .thumbnail {
+    /* width: 75px; */
+    /* width: 59%; */
+    padding-left: 40px;
+    margin-bottom: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include mq(sp) {
+      flex-flow: column;
+      width: 100%;
+      padding-left: 0;
+    }
+  
+    img {
+      border: $border;
+      width: 61.5%;
+
+      @include mq(sp) {
+        width: 100%;
+      }
+    }
+  
+    p {
+      /* position: relative;
+      top: 20em;
+      left: 50em; */
+      font-size: 2em;
+      text-align: right;
+      padding-right: 40px;
+    }
+  }
+  
+  figure img {
+    vertical-align: bottom;
+    gap: 0.1% 0.1%;
+  }
+  
+  .movie {
+    text-align: center;
+
+    h3 {
+      font-size: 2em;
+      font-weight: lighter;
+      margin-bottom: 1em
+    }
+  }
+
+// ここまでHobbies
+
+// ここからContact
+
+.Contact h2 {
+    @include h2-style;
+  }
+  
+  .icons {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em;
+
+    
+  
+    i {
+      // position: absolute;
+      // top: 10%;
+      // left: 0;
+      // right: 0;
+      // align-items: center;
+      // font-size: 2.5em;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: 0;
+      transform: translateY(-50%);
+      font-size: 2em;
+    }
+  
+    a {
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      border: $border;
+      border-radius: 50%;
+      position: relative;
+      width: 100px;
+      height: 100px;
+
+      @include mq(sp) {
+        border: none;
+      }
+  
+      &.instagram:hover {
+        background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+        color: #fff;
+        transition: 1s;
+      }
+  
+      &.github:hover {
+        background: #171515;
+        color: #fff;
+      }
+  
+      &.twitter:hover {
+        background: #000;
+        color: #fff;
+      }
+    }
+  }
+  
+  .form {
+    text-align: center;
+  }
+
+  form {
+    width: 40%;
+    margin: auto;
+    margin-top: 5em;
+
+    @include mq(pc) {
+      width: 45%;
+    }
+
+    @include mq(tab) {
+      width: 70%;
+    }
+
+    @include mq(sp) {
+      width: 100%;
+    }
+
+    p {
+      padding-bottom: 10px;
+      text-align: left;
+    }
+
+    textarea {
+      text-align: left;
+    }
+
+    .send {
+      text-align: right;
+
+      input {
+        border: 1.5px solid #4d4d4d;
+        border-radius: 999px;
+        padding: 10px;
+        background-color: #fff;
+        transition: all 0.4s;
+
+        @include mq(sp) {
+          color: #000;
+        }
+
+        &:hover {
+          background-color: $accent-color;
+          transition: all 0.4s;
+        }
+      }
+    }
+  }
+  .flex {
+    display: flex;
+
+    p {
+      width: 100%;
+    }
+
+    p:first-child {
+      width: 25%;
+    }
+
+    input, textarea {
+      display: block;
+      width: 100%;
+    }
+  }
+
+// ここまでContact
+
+//topに戻るボタン
+.top-button {
+  width: 50px;
+  height: 50px;
+  float: right;
+
+  .return_top {
+    border: $border;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    padding: 0.5em;
+    text-align: center;
+    transition: all 0.4s;
+
+    &:hover {
+      background-color: $accent-color;
+      transition: all 0.4s;
+    }
+  
+    i {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: 0;
+      transform: translateY(-50%);
+      color: #000;
+    }
+  }
+}
+
+
+
+
+// ここまでcontent
+
+// ここからfooter
+// ここまでfooter
