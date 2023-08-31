@@ -266,12 +266,20 @@ section h2 {
 
 .portfolios {
   text-align: center;
+  display: flex;
+  gap: 4%;
+
+  .work-box {
+    width: 50%;
+    margin: auto;
+  }
+
   .works {
     display: inline-block;
     border: $border;
     border-radius: 8px;
     padding: 20px;
-    width: 30%;
+    width: 50%;
 
     @include mq(tab) {
       display: block;

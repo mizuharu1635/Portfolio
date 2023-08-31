@@ -100,43 +100,45 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
 
             <section class="Portfolio">
                 <h2 id="Portfolio">Portfolio</h2>
-                <div class="portfolios">
-                    <article class="works">
-                        <div class="work">
-                            <a href="#top" target="_blank"><img src="images/portfolio-photo1.webp" alt="ポートフォリオサイト"></a>
-                        </div>
-                        <div class="caption">
-                            <p>My Portfolio</p>
-                            <p>使用した言語</p>
-                            <p>HTML, SCSS, JavaScript, php</p>
-                            <p>制作時間:45時間</p>
-                            <p>GitHubは<a href="https://github.com/mizuharu1635/Portfolio.git" target="_blank">こちら</a></p>
-                        </div>
-                    </article>
-                    <article class="works">
-                        <div class="work">
-                            <a href="https://watspr.conohawing.com/%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%82%af%e3%83%ad%e3%83%bc%e3%83%b3/" target="_blank"><img src="images/portfolio-photo2.webp" alt="Harukigram"></a>
-                        </div>
-                        <div class="caption">
-                            <p>Harukigram</p>
-                            <p>使用した言語</p>
-                            <p>HTML, CSS</p>
-                            <p>制作時間:5時間</p>
-                            <p>GitHubは<a href="https://github.com/mizuharu1635/harukigram.git" target="_blank">こちら</a></p>
-                        </div>
-                    </article>
-                    <!-- <article class="works">
-                        <div class="work">
-                            <a href="#" target="_blank"><img src="images/portfolio-photo1.webp" alt="写真3"></a>
-                        </div>
-                        <div class="caption">
-                            <p>タイトル</p>
-                            <p>使用した言語</p>
-                            <p>HTML, CSS, JavaScript</p>
-                            <p>制作時間:〇時間</p>
-                            <p>GitHubは<a href="https://github.com/mizuharu1635/Portfolio.git" target="_blank">こちら</a></p>
-                        </div>
-                    </article> -->
+                <div class="work-box">    
+                    <div class="portfolios">
+                        <article class="works">
+                            <div class="work">
+                                <a href="#top" target="_blank"><img src="images/portfolio-photo1.webp" alt="ポートフォリオサイト"></a>
+                            </div>
+                            <div class="caption">
+                                <p>My Portfolio</p>
+                                <p>使用した言語</p>
+                                <p>HTML, SCSS, JavaScript, php</p>
+                                <p>制作時間:45時間</p>
+                                <p>GitHubは<a href="https://github.com/mizuharu1635/Portfolio.git" target="_blank">こちら</a></p>
+                            </div>
+                        </article>
+                        <article class="works">
+                            <div class="work">
+                                <a href="https://watspr.conohawing.com/%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%82%af%e3%83%ad%e3%83%bc%e3%83%b3/" target="_blank"><img src="images/portfolio-photo2.webp" alt="Harukigram"></a>
+                            </div>
+                            <div class="caption">
+                                <p>Harukigram</p>
+                                <p>使用した言語</p>
+                                <p>HTML, CSS</p>
+                                <p>制作時間:5時間</p>
+                                <p>GitHubは<a href="https://github.com/mizuharu1635/harukigram.git" target="_blank">こちら</a></p>
+                            </div>
+                        </article>
+                        <!-- <article class="works">
+                            <div class="work">
+                                <a href="#" target="_blank"><img src="images/portfolio-photo1.webp" alt="写真3"></a>
+                            </div>
+                            <div class="caption">
+                                <p>タイトル</p>
+                                <p>使用した言語</p>
+                                <p>HTML, CSS, JavaScript</p>
+                                <p>制作時間:〇時間</p>
+                                <p>GitHubは<a href="https://github.com/mizuharu1635/Portfolio.git" target="_blank">こちら</a></p>
+                            </div>
+                        </article> -->
+                    </div>
                 </div>
             </section>
 

@@ -184,13 +184,19 @@ section h2 {
 
 .portfolios {
   text-align: center;
+  display: flex;
+  gap: 4%;
+}
+.portfolios .work-box {
+  width: 50%;
+  margin: auto;
 }
 .portfolios .works {
   display: inline-block;
   border: 2px solid #4d4d4d;
   border-radius: 8px;
   padding: 20px;
-  width: 30%;
+  width: 50%;
 }
 @media screen and (max-width: 768px) {
   .portfolios .works {
