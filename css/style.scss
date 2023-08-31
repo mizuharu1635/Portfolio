@@ -18,6 +18,13 @@ $breakPoints: (
   font-family: 'Zen Kaku Gothic New', sans-serif;
   font-family: 'Zen Maru Gothic', sans-serif;
 }
+@mixin form-btn {
+  border: 1.5px solid #4d4d4d;
+  border-radius: 999px;
+  padding: 10px;
+  background-color: #fff;
+  transition: all 0.4s;
+}
 @mixin mq ($breakPoint) {
   @media screen and (max-width: #{map-get($breakPoints, $breakPoint)}) {
     @content;
@@ -251,95 +258,6 @@ section h2 {
 
 // ここまでAbout
 
-// ここからSkills
-
-// .Skills {
-//     h2 {
-//         @include h2-style;
-//     }
-
-//     .icon {
-//         display: flex;
-//         justify-content: space-between;
-//         gap: 1%;
-//     }
-
-//     .skill {
-//         font-size: 3em;
-//         padding: 0.5em 0;
-//         position: relative;
-//         width: 13%;
-//         border: $border;
-//         border-radius: 8px;
-//         // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.15);
-//         &:hover {
-//             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.15);
-//         }
-//         i {
-//             width: 100%;
-//             text-align: center;
-//         }
-//         p {
-//             font-size: 0.35em;
-//             text-align: center;
-//         }
-//     }
-
-//     .comprehension {
-//         display: flex;
-//         justify-content: space-between;
-//         gap: 1%;
-//         padding: 1em 0;
-//         width: 13%;
-//     }
-
-//     .fa-html5 {
-//         color: #e34f26;
-//     }
-
-//     .fa-css3-alt {
-//         color: #35a8db;
-//     }
-
-//     .fa-sass {
-//         color: #CE679A;
-//     }
-
-//     .fa-square-js {
-//         color: #F7DF1E;
-//     }
-
-//     .fa-react {
-//         color: #61DAFB;
-//     }
-
-//     .fa-face-smile {
-//         color: #fcfc31;
-//     }
-
-//     .fa-php {
-//         color: #4F5D95;
-//     }
-
-//     .fa-wordpress {
-//         color: #21759B;
-//     }
-
-//     .fa-camera {
-//         color: #333333;
-//     }
-
-//     .fa-sliders {
-//         color: #001E36;
-//     }
-
-//     .stars {
-//         padding-left: 1.5em;
-//     }
-// }
-
-// ここまでSkills
-
 // ここからPortfolio
 
 .Portfolio h2 {
@@ -461,6 +379,51 @@ section h2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
+
+    .bird {
+      margin: 4%;
+
+      &:nth-of-type(3n + 1) {
+        margin-left: 0;
+        text-align: left;
+      }
+
+      &:nth-of-type(3n + 1) img {
+        width: 96%;
+      }
+
+      &:nth-of-type(3n + 3) {
+        margin-right: 0;
+        text-align: right;
+      }
+
+      &:nth-of-type(3n + 3) img {
+        width: 96%;
+      }
+    }
+
+    .landscape {
+      margin: 4%;
+
+      &:nth-of-type(3n + 1) {
+        margin-left: 0;
+        text-align: left;
+      }
+
+      &:nth-of-type(3n + 1) img {
+        width: 96%;
+      }
+
+      &:nth-of-type(3n + 3) {
+        margin-right: 0;
+        text-align: right;
+      }
+
+      &:nth-of-type(3n + 3) img {
+        width: 96%;
+      }      
+    }
+
   }
   
   .more {
@@ -499,7 +462,7 @@ section h2 {
   
   .bird img, .landscape img {
     border: $border;
-    width: 80%;
+    width: 100%;
     margin-bottom: 3em;
   }
   
@@ -570,12 +533,6 @@ section h2 {
     
   
     i {
-      // position: absolute;
-      // top: 10%;
-      // left: 0;
-      // right: 0;
-      // align-items: center;
-      // font-size: 2.5em;
       position: absolute;
       top: 50%;
       left: 0;
@@ -619,6 +576,19 @@ section h2 {
   
   .form {
     text-align: center;
+
+    h1 {
+      margin: 2em auto 1em;
+      font-weight: inherit;
+    }
+  }
+
+  .form-action-btn {
+    margin-top: 40px;
+
+    form {
+      display: inline;
+    }
   }
 
   form {
@@ -641,21 +611,18 @@ section h2 {
     p {
       padding-bottom: 10px;
       text-align: left;
+      display: inline;
     }
 
     textarea {
       text-align: left;
     }
 
-    .send {
+    .form-btn {
       text-align: right;
 
       input {
-        border: 1.5px solid #4d4d4d;
-        border-radius: 999px;
-        padding: 10px;
-        background-color: #fff;
-        transition: all 0.4s;
+        @include form-btn;
 
         @include mq(sp) {
           color: #000;
@@ -685,6 +652,20 @@ section h2 {
     }
   }
 
+  .back-btn {
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+    border: $border;
+    border-radius: 999px;
+    transition: all 0.4s;
+
+    &:hover {
+      background-color: $accent-color;
+      transition: all 0.4s;
+    }
+  }
+
 // ここまでContact
 
 //topに戻るボタン
@@ -692,6 +673,7 @@ section h2 {
   width: 50px;
   height: 50px;
   float: right;
+  margin-bottom: 5em;
 
   .return_top {
     border: $border;

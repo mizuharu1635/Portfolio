@@ -1,31 +1,38 @@
 <?php
-    session_start();
-    $mode = 'input';
-    if( isset($_POST['back']) && $_POST['back'] ){
-        // なにもしない時
-    } else if( isset($_POST['confirm']) && $_POST['confirm'] ){
-        // 確認ボタンを押したとき
-        $_SESSION['fullname'] = $_POST['fullname'];
-        $_SESSION['email']    = $_POST['email'];
-        $_SESSION['message']  = $_POST['message'];
-        $mode = 'confirm';
-    } else if( isset($_POST['send']) && $_POST['send'] ) {
-        //送信ボタンを押したとき
-        $message = "メッセージを受け付けました。\r\n"
-                 . "名前:" . $_SESSION['fullname'] . "\r\n"
-                 . "email:" . $_SESSION['email'] . "\r\n"
-                 . "メッセージ内容:\r\n"
-                 . preg_replace("/\r\n|\r|\n/", "\r\n", $_SESSION['message']);
-        mail($_SESSION['email'], 'メッセージを送っていただきありがとうございます。', $message);
-        mail('mizuharu35@gmail.com', 'メッセージを送っていただきありがとうございます。', $message);
-        $_SESSION = array();
-        $mode = 'send';
-    } else {
-        $_SESSION['fullname'] = "";
-        $_SESSION['email']    = "";
-        $_SESSION['message']  = "";
+define('MODE_INITIAL', 0);  //初期モード
+define('MODE_CONFIRM', 1);  //確認モード
+define('MODE_REDISP', 2);   //再表示モード
+define('MODE_REGIST', 3);   //送信モード
+//処理モード取得
+$intMode = MODE_INITIAL;
+if (isset($_POST["mode"]) == true && $_POST["mode"] != "") {
+    $intMode = intval($_POST["mode"]);
+}
+
+//名前とメールアドレス取得
+$strName = "";
+$strMail = "";
+$strMessage = "";
+if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGIST) {
+
+    //  $_POSTから名前の取得
+    if (isset($_POST["name"]) == true && $_POST["name"] != "") {
+        $strName = $_POST["name"];
     }
+
+    //  $_POSTからメールアドレスの取得
+    if (isset($_POST["mail"]) == true && $_POST["mail"] != "") {
+        $strMail = $_POST["mail"];
+    }
+
+    // $_POSTからメッセージの取得
+    if (isset($_POST["message"]) == true && $_POST["message"] !="") {
+        $strMessage = $_POST["message"];
+    }
+}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -78,82 +85,18 @@
                     <p>笑うと目が消えるってよく言われます。:)</p>
                 </div>
                 <dl class="line-left">
-                        <dt>2022年</dt>
-                        <dd>3月<br>日章学園高等学校<br>パティシエ科卒業</dd>
-                        <dd>4月<br>有限会社オッティモに<br>パティシエとして入社</dd>
-                        
-                        <dd>6月<br>退職</dd>
-    
-                        <dd>9月～<br>タイムズカーに<br class="indention">アルバイトで入社<br>洗車・回送<br class="indention">レンタカーの在庫管理、電話受付</dd>
-                        
-                        <dt>2023年</dt>
-                        <dd>3月～<br>職業訓練校<br class="indention">ライブビジネススクール<br class="indention">フロントエンジニア科で<br>HTML、CSS、JavaScript、<br class="indention">PHP、WordPressなどの<br class="indention">基本的なスキルや<br class="indention">IT知識を学ぶ</dd>
+                    <dt>2022年</dt>
+                    <dd>3月<br>日章学園高等学校<br>パティシエ科卒業</dd>
+                    <dd>4月<br>有限会社オッティモに<br>パティシエとして入社</dd>
+                    
+                    <dd>6月<br>退職</dd>
+
+                    <dd>9月～<br>タイムズカーに<br class="indention">アルバイトで入社<br>洗車・回送<br class="indention">レンタカーの在庫管理、電話受付</dd>
+                    
+                    <dt>2023年</dt>
+                    <dd>3月～<br>職業訓練校<br class="indention">ライブビジネススクール<br class="indention">フロントエンジニア科で<br>HTML、CSS、JavaScript、<br class="indention">PHP、WordPressなどの<br class="indention">基本的なスキルや<br class="indention">IT知識を学ぶ</dd>
                 </dl>
             </section>
-            <!-- <section class="Skills">
-                <h2 id="Skills">Skills</h2>
-                <div class="leaves-container">
-                    <span class="leaf leaf-1"></span>
-                </div>
-                <div class="icon">
-                    <div class="skill">
-                        <p>HTML</p>
-                        <i class="fa-brands fa-html5"></i>
-                        <p class="html">理解度<br><span class="star">★★★★★</span></p>
-                    </div>
-                    <div class="skill">
-                        <p>css</p>
-                        <i class="fa-brands fa-css3-alt"></i>
-                        <p class="css">理解度<br><span class="star">★★★★★</span></p>
-                    </div>
-                    <div class="skill">
-                        <p>sass</p>
-                        <i class="fa-brands fa-sass"></i>
-                        <p class="sass">理解度<br><span class="star"></span>★★★★☆</span></p>
-                    </div>
-                    <div class="skill">
-                        <p>JavaScript</p>
-                        <i class="fa-brands fa-square-js"></i>
-                        <p class="js">理解度<br><span class="star">★★★★☆</span></p>
-                    </div>
-                    <div class="skill">
-                        <p>React</p>
-                        <i class="fa-brands fa-react"></i>
-                        <p class="react">勉強中</p>
-                    </div>
-                    <div class="skill">
-                        <p>WordPress</p>
-                        <i class="fa-brands fa-wordpress"></i>
-                        <p class="wordpress">理解度<br><span class="star">★★★★☆</span></p>
-                    </div>
-                    
-                </div>
-                <div class="icon">
-                    <div class="skill">
-                        <p>php</p>
-                        <i class="fa-brands fa-php"></i>
-                        <p class="php">理解度<br><span class="star">★★★☆☆</span></p>
-                    </div>
-                    
-                    <div class="skill">
-                        <p>camera</p>
-                        <i class="fa-solid fa-camera"></i>
-                        <p class="camera">理解度<br><span class="star">★★★★★</span></p>
-                    </div>
-                    <div class="skill">
-                        <p>Lightroom</p>
-                        <i class="fa-solid fa-sliders"></i>
-                        <p class="Lightroom">理解度<br><span>★★★★★</span></p>
-                    </div>
-                    <div class="skill">
-                        <p>smile</p>
-                        <a href="#smile">
-                            <i class="fa-solid fa-face-smile"></i>
-                        </a>
-                        <p class="weixin">笑顔<span class="stars">★★★★★★★★★★★★★★★★★★</span></p>
-                    </div>
-                </div>
-            </section> -->
 
             <section class="Portfolio">
                 <h2 id="Portfolio">Portfolio</h2>
@@ -172,17 +115,17 @@
                     </article>
                     <article class="works">
                         <div class="work">
-                            <a href="#" target="_blank"><img src="images/portfolio-photo2.webp" alt="Harukigram"></a>
+                            <a href="https://watspr.conohawing.com/%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%82%af%e3%83%ad%e3%83%bc%e3%83%b3/" target="_blank"><img src="images/portfolio-photo2.webp" alt="Harukigram"></a>
                         </div>
                         <div class="caption">
                             <p>Harukigram</p>
                             <p>使用した言語</p>
                             <p>HTML, CSS</p>
                             <p>制作時間:5時間</p>
-                            <p>GitHubは<a href="https://github.com/mizuharu1635/Portfolio.git" target="_blank">こちら</a></p>
+                            <p>GitHubは<a href="https://github.com/mizuharu1635/harukigram.git" target="_blank">こちら</a></p>
                         </div>
                     </article>
-                    <article class="works">
+                    <!-- <article class="works">
                         <div class="work">
                             <a href="#" target="_blank"><img src="images/portfolio-photo1.webp" alt="写真3"></a>
                         </div>
@@ -193,7 +136,7 @@
                             <p>制作時間:〇時間</p>
                             <p>GitHubは<a href="https://github.com/mizuharu1635/Portfolio.git" target="_blank">こちら</a></p>
                         </div>
-                    </article>
+                    </article> -->
                 </div>
             </section>
 
@@ -374,6 +317,7 @@
                     </div>
                 </div>
             </section>
+            
             <section class="Contact">
                 <h2 id="Contact">Contact</h2>
                 <div class="icons">
@@ -413,41 +357,80 @@
                     <p>今後のポートフォリオの参考にさせて頂きますので、</p>
                     <p>ご感想（良かった所、悪かった所）、また改善点など</p>
                     <p>思いついたことがあればご記入ください。</p>
-                    <?php if( $mode == 'input' ){ ?>
+                    <?php
+                    if ($intMode == MODE_INITIAL || $intMode == MODE_REDISP) {
+                    //  初期モード、再表示モードの場合
+
+                    //  if($intMode == MODE_INITIAL){ ?>
                     <!-- 入力画面 -->
                     <form action="#Contact" method="post">
                         <div class="flex">
                             <p>お名前</p>
-                            <p><input type="text" name="fullname" value="<?php echo $_SESSION['fullname'] ?>" placeholder="例）水俣春輝"></p>
+                            <p><input type="text" name="name" value="<?php echo $strName; ?>" placeholder="例）水俣春輝"></p>
                         </div>
                         <div class="flex">
                             <p>メール</p>
-                            <p><input type="email" name="email" value="<?php echo $_SESSION['email'] ?>" placeholder="例）mizuharu35@gmail.com"></p>
+                            <p><input type="email" name="mail" value="<?php echo $strMail; ?>" placeholder="例）mizuharu35@gmail.com"></p>
                         </div>
                         <div class="flex">
                             <p>感　想</p>
-                            <p><textarea name="message" id="form" cols="30" rows="10"><?php echo $_SESSION['message'] ?></textarea></p>
+                            <p><textarea name="message" id="form" cols="30" rows="10"><?php echo $strMessage; ?></textarea></p>
                         </div>
-                        <p class="send"><input type="submit" name="confirm" value="確認"></p>
+                        <input type="hidden" name="mode" value="<?php echo(MODE_CONFIRM); ?>">
+                        <p class="form-btn"><input type="submit" name="confirm" value="確認"></p>
                     </form>
-                    <?php } else if( $mode == 'confirm' ){ ?>
-                    <!-- 確認画面 -->
-                    <form action="#Contact" method="post">
-                        名前:    <?php echo $_SESSION['fullname'] ?><br>
-                        Eメール: <?php echo $_SESSION['email'] ?><br>
-                        メッセージ内容:<br>
-                        <?php echo nl2br($_SESSION['message']) ?><br>
-                        <input type="submit" name="back" value="戻る">
-                        <input type="submit" name="send" value="送信">
-                    </form>
-                    <?php } else { ?>
-                        <!-- 完了画面 -->
-                        送信しました。メッセージありがとうございました。<br>
-                    <?php } ?>
+                    <?php } else if($intMode == MODE_CONFIRM) { 
+                    //確認画面の場合    
+                    ?>
+                    <h1>確認画面</h1>
+                    <?php
+                        echo "名前: ".$_POST["name"]."<br>";
+                        echo "メールアドレス: ".$_POST["mail"]."<br>";
+                        echo "メッセージ内容: ".$_POST["message"]."<br>";
+                    ?>
+                    <div class="form-action-btn">
+                        <form action="#Contact" method="post">
+                            <input type="hidden" name="name" value="<?php echo $_POST["name"]; ?>">
+                            <input type="hidden" name="mail" value="<?php echo $_POST["mail"]; ?>">
+                            <input type="hidden" name="message" value="<?php echo $_POST["message"]; ?>">
+                            <input type="hidden" name="mode" value="<?php echo(MODE_REDISP); ?>">
+                            <p class="form-btn"><input type="submit" name="back" class="form-btn" value="←戻る"></p>
+                        </form>
+                        <form action="#Contact" method="post">
+                            <input type="hidden" name="name" value="<?php echo $_POST["name"]; ?>">
+                            <input type="hidden" name="mail" value="<?php echo $_POST["mail"]; ?>">
+                            <input type="hidden" name="message" value="<?php echo $_POST["message"]; ?>">
+                            <input type="hidden" name="mode" value="<?php echo(MODE_REGIST); ?>">
+                            <p class="form-btn"><input type="submit" name="send" value="送信→"></p>
+                        </form>
                     </div>
-                <!-- <div class="form">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc9D13-31jQwGkubgAxJPNp7DCDMFZk9cQADu_Lv3JKyO4tng/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-                </div> -->
+                    <?php
+                    } else if ($intMode == MODE_REGIST) {
+                        //登録モードの場合
+                        $strName    = $_POST["name"];
+                        $strMail    = $_POST["mail"];
+                        $strMessage = $_POST["message"];
+
+                        $message = "メッセージを受け付けました。\r\n"
+                                 . "名前:" . $strName . "\r\n"
+                                 . "mail:" . $strMail . "\r\n"
+                                 . "メッセージ内容:\r\n"
+                                 . preg_replace("/\r\n|\r|\n/", "\r\n", $strMessage);
+                        mail($strMail, 'メッセージを送っていただきありがとうございます。', $strMessage);
+                        mail('mizuharu35@gmail.com', 'メッセージを送っていただきありがとうございます。', $strMessage);
+                        $strName    = "";
+                        $strMail    = "";
+                        $strMessage = "";
+                    ?>
+                    
+                    <!-- 完了画面 -->
+                    <h1>送信しました。メッセージありがとうございました。<br></h1>
+                    <a href="index.php" class="back-btn">入力に戻る</a>
+
+                    <?php
+                    }
+                    ?>
+                </div>
             </section>
             <div class="top-button">
                 <a class="return_top" href="#top"><i class="fa-solid fa-arrow-turn-up"></i></a>

@@ -289,6 +289,40 @@ section h2 {
     grid-template-columns: 1fr 1fr;
   }
 }
+.bird_photo .bird, .landscape_photo .bird {
+  margin: 4%;
+}
+.bird_photo .bird:nth-of-type(3n + 1), .landscape_photo .bird:nth-of-type(3n + 1) {
+  margin-left: 0;
+  text-align: left;
+}
+.bird_photo .bird:nth-of-type(3n + 1) img, .landscape_photo .bird:nth-of-type(3n + 1) img {
+  width: 96%;
+}
+.bird_photo .bird:nth-of-type(3n + 3), .landscape_photo .bird:nth-of-type(3n + 3) {
+  margin-right: 0;
+  text-align: right;
+}
+.bird_photo .bird:nth-of-type(3n + 3) img, .landscape_photo .bird:nth-of-type(3n + 3) img {
+  width: 96%;
+}
+.bird_photo .landscape, .landscape_photo .landscape {
+  margin: 4%;
+}
+.bird_photo .landscape:nth-of-type(3n + 1), .landscape_photo .landscape:nth-of-type(3n + 1) {
+  margin-left: 0;
+  text-align: left;
+}
+.bird_photo .landscape:nth-of-type(3n + 1) img, .landscape_photo .landscape:nth-of-type(3n + 1) img {
+  width: 96%;
+}
+.bird_photo .landscape:nth-of-type(3n + 3), .landscape_photo .landscape:nth-of-type(3n + 3) {
+  margin-right: 0;
+  text-align: right;
+}
+.bird_photo .landscape:nth-of-type(3n + 3) img, .landscape_photo .landscape:nth-of-type(3n + 3) img {
+  width: 96%;
+}
 
 .more {
   text-align: center;
@@ -324,7 +358,7 @@ section h2 {
 
 .bird img, .landscape img {
   border: 2px solid #4d4d4d;
-  width: 80%;
+  width: 100%;
   margin-bottom: 3em;
 }
 
@@ -431,6 +465,17 @@ figure img {
 .form {
   text-align: center;
 }
+.form h1 {
+  margin: 2em auto 1em;
+  font-weight: inherit;
+}
+
+.form-action-btn {
+  margin-top: 40px;
+}
+.form-action-btn form {
+  display: inline;
+}
 
 form {
   width: 40%;
@@ -455,14 +500,15 @@ form {
 form p {
   padding-bottom: 10px;
   text-align: left;
+  display: inline;
 }
 form textarea {
   text-align: left;
 }
-form .send {
+form .form-btn {
   text-align: right;
 }
-form .send input {
+form .form-btn input {
   border: 1.5px solid #4d4d4d;
   border-radius: 999px;
   padding: 10px;
@@ -470,11 +516,11 @@ form .send input {
   transition: all 0.4s;
 }
 @media screen and (max-width: 480px) {
-  form .send input {
+  form .form-btn input {
     color: #000;
   }
 }
-form .send input:hover {
+form .form-btn input:hover {
   background-color: #F2C12E;
   transition: all 0.4s;
 }
@@ -493,10 +539,24 @@ form .send input:hover {
   width: 100%;
 }
 
+.back-btn {
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+  border: 2px solid #4d4d4d;
+  border-radius: 999px;
+  transition: all 0.4s;
+}
+.back-btn:hover {
+  background-color: #F2C12E;
+  transition: all 0.4s;
+}
+
 .top-button {
   width: 50px;
   height: 50px;
   float: right;
+  margin-bottom: 5em;
 }
 .top-button .return_top {
   border: 2px solid #4d4d4d;
