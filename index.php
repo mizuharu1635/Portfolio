@@ -53,6 +53,9 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
     <script src="https://kit.fontawesome.com/a6bab3216a.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="up"></div>
+    <div class="down"></div>
+    <div class="line"></div>
     <header id="top">
         <div class="nav">
             <ul class="list">
