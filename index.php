@@ -60,7 +60,6 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
         <div class="nav">
             <ul class="list">
                 <li><a href="#About">About</a></li>
-                <!-- <li><a href="#Skills">Skills</a></li> -->
                 <li><a href="#Portfolio">Portfolio</a></li>
                 <li><a href="#Hobbies">Hobbies</a></li>
                 <li><a href="#Contact">Contact</a></li>
@@ -85,7 +84,10 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
                     <p>宮崎県宮崎市生まれ</p>
                     <p>好きなことは写真撮影とフットサルとお菓子作りです。</p>
                     <p>興味のあることは、Reactなどのフレームワークや、UI/UXデザインです</p>
-                    <p>笑うと目が消えるってよく言われます。:)</p>
+                    <p>笑うと目が消えるってよく言われます。😄</p>
+                </div>
+                <div class="face-slider">
+                    <marquee behavior="scroll" direction="" scrollamount="8" scrolldelay="70"><img src="images/face.png" alt="kao" ></marquee>
                 </div>
                 <dl class="line-left">
                     <dt>2022年</dt>
@@ -119,7 +121,7 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
                         </article>
                         <article class="works">
                             <div class="work">
-                                <a href="https://watspr.conohawing.com/%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%82%af%e3%83%ad%e3%83%bc%e3%83%b3/" target="_blank"><img src="images/portfolio-photo2.webp" alt="Harukigram"></a>
+                                <a href="https://watspr.conohawing.com/harukigram/" target="_blank"><img src="images/portfolio-photo2.webp" alt="Harukigram"></a>
                             </div>
                             <div class="caption">
                                 <p>Harukigram</p>
@@ -336,27 +338,6 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
                 </div>
-                <!-- <div class="form">
-                    <p>ポートフォリオについて</p>
-                    <p>今後のポートフォリオの参考にさせて頂きますので、</p>
-                    <p>ご感想（良かった所、悪かった所）、また改善点など</p>
-                    <p>思いついたことがあればご記入ください。</p>
-                    <form action="./index.html" method="post">
-                        <div class="flex">
-                            <p>お名前</p>
-                            <p><input type="text" name="fullname" value="" placeholder="例）水俣春輝"></p>
-                        </div>
-                        <div class="flex">
-                            <p>メール</p>
-                            <p><input type="email" name="email" value="" placeholder="例）mizuharu35@gmail.com"></p>
-                        </div>
-                        <div class="flex">
-                            <p>感　想</p>
-                            <p><textarea name="message" id="form" cols="30" rows="10"></textarea></p>
-                        </div>
-                        <p class="send"><input type="submit" name="confirm" value="確認"></p>
-                    </form>
-                </div> -->
                 <div class="form">
                     <p>ポートフォリオについて</p>
                     <p>今後のポートフォリオの参考にさせて頂きますので、</p>
@@ -399,7 +380,7 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
                             <input type="hidden" name="mail" value="<?php echo $_POST["mail"]; ?>">
                             <input type="hidden" name="message" value="<?php echo $_POST["message"]; ?>">
                             <input type="hidden" name="mode" value="<?php echo(MODE_REDISP); ?>">
-                            <p class="form-btn"><input type="submit" name="back" class="form-btn" value="←戻る"></p>
+                            <p class="form-btn"><input type="submit" name="back" value="←戻る"></p>
                         </form>
                         <form action="#Contact" method="post">
                             <input type="hidden" name="name" value="<?php echo $_POST["name"]; ?>">
@@ -430,7 +411,7 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
                     
                     <!-- 完了画面 -->
                     <h1>送信しました。メッセージありがとうございました。<br></h1>
-                    <a href="index.php" class="back-btn">入力に戻る</a>
+                    <a href="index.php" class="return-btn">入力に戻る</a>
 
                     <?php
                     }
@@ -442,9 +423,6 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
             </div>
         </div>
     </main>
-    <footer>
-
-    </footer>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>

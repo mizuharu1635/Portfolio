@@ -195,6 +195,13 @@ section h2 {
         }
     }
 
+    .face-slider {
+      img {
+        opacity: 0.8;
+        width: 200px;
+      }
+    }
+
     .career {
         padding-right: 1.5em;
         margin: 0 auto;
@@ -290,9 +297,12 @@ section h2 {
 
 .portfolios {
   text-align: center;
-  display: flex;
+  // display: flex;
   gap: 4%;
 
+  @media screen and (min-width: 768px) {
+    display: flex ;
+  }
   .work-box {
     width: 50%;
     margin: auto;
@@ -351,7 +361,7 @@ section h2 {
 
       &:hover {
         background-color: $accent-color;
-        color: #333333;
+        color: #fff;
         transition: 0.4s;
       }
     }
@@ -661,6 +671,7 @@ section h2 {
         }
 
         &:hover {
+          color: #fff;
           background-color: $accent-color;
           transition: all 0.4s;
         }
@@ -684,7 +695,7 @@ section h2 {
     }
   }
 
-  .back-btn {
+  .return-btn {
     color: #000;
     text-decoration: none;
     padding: 10px;
@@ -693,6 +704,7 @@ section h2 {
     transition: all 0.4s;
 
     &:hover {
+      color: #fff;
       background-color: $accent-color;
       transition: all 0.4s;
     }
@@ -731,6 +743,12 @@ section h2 {
       margin: 0;
       transform: translateY(-50%);
       color: #000;
+      transition: all 0.4s;
+
+      &:hover {
+        color: #fff;
+        transition: all 0.4s;
+      }
     }
   }
 }
@@ -739,6 +757,3 @@ section h2 {
 
 
 // ここまでcontent
-
-// ここからfooter
-// ここまでfooter
