@@ -141,10 +141,6 @@ section h2 {
   border-radius: 50%;
   border: 2px solid #4d4d4d;
 }
-.About .face-slider img {
-  opacity: 0.8;
-  width: 200px;
-}
 .About .career {
   padding-right: 1.5em;
   margin: 0 auto;
@@ -344,6 +340,28 @@ section h2 {
 .bird_photo .bird:nth-of-type(3n + 3) img, .landscape_photo .bird:nth-of-type(3n + 3) img {
   width: 96%;
 }
+@media screen and (max-width: 480px) {
+  .bird_photo .bird:nth-of-type(2n + 1), .landscape_photo .bird:nth-of-type(2n + 1) {
+    margin-left: 0;
+    text-align: left;
+  }
+  .bird_photo .bird:nth-of-type(2n + 1) img, .landscape_photo .bird:nth-of-type(2n + 1) img {
+    width: 96%;
+  }
+  .bird_photo .bird:nth-of-type(2n + 2), .landscape_photo .bird:nth-of-type(2n + 2) {
+    margin-right: 0;
+    text-align: right;
+  }
+  .bird_photo .bird:nth-of-type(2n + 2) img, .landscape_photo .bird:nth-of-type(2n + 2) img {
+    width: 96%;
+  }
+  .bird_photo .bird:nth-of-type(3n + 1), .landscape_photo .bird:nth-of-type(3n + 1) {
+    margin-left: 4%;
+  }
+  .bird_photo .bird:nth-of-type(3n + 3), .landscape_photo .bird:nth-of-type(3n + 3) {
+    margin-right: 4%;
+  }
+}
 .bird_photo .landscape, .landscape_photo .landscape {
   margin: 4%;
 }
@@ -360,6 +378,28 @@ section h2 {
 }
 .bird_photo .landscape:nth-of-type(3n + 3) img, .landscape_photo .landscape:nth-of-type(3n + 3) img {
   width: 96%;
+}
+@media screen and (max-width: 480px) {
+  .bird_photo .landscape:nth-of-type(2n + 1), .landscape_photo .landscape:nth-of-type(2n + 1) {
+    margin-left: 0;
+    text-align: left;
+  }
+  .bird_photo .landscape:nth-of-type(2n + 1) img, .landscape_photo .landscape:nth-of-type(2n + 1) img {
+    width: 96%;
+  }
+  .bird_photo .landscape:nth-of-type(2n + 2), .landscape_photo .landscape:nth-of-type(2n + 2) {
+    margin-right: 0;
+    text-align: right;
+  }
+  .bird_photo .landscape:nth-of-type(2n + 2) img, .landscape_photo .landscape:nth-of-type(2n + 2) img {
+    width: 96%;
+  }
+  .bird_photo .landscape:nth-of-type(3n + 1), .landscape_photo .landscape:nth-of-type(3n + 1) {
+    margin-left: 4%;
+  }
+  .bird_photo .landscape:nth-of-type(3n + 3), .landscape_photo .landscape:nth-of-type(3n + 3) {
+    margin-right: 4%;
+  }
 }
 
 .more {
@@ -401,8 +441,6 @@ section h2 {
 }
 
 .thumbnail {
-  /* width: 75px; */
-  /* width: 59%; */
   padding-left: 40px;
   margin-bottom: 5em;
   display: flex;
@@ -426,9 +464,6 @@ section h2 {
   }
 }
 .thumbnail p {
-  /* position: relative;
-  top: 20em;
-  left: 50em; */
   font-size: 2em;
   text-align: right;
   padding-right: 40px;

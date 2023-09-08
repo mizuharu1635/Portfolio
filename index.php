@@ -84,10 +84,7 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
                     <p>宮崎県宮崎市生まれ</p>
                     <p>好きなことは写真撮影とフットサルとお菓子作りです。</p>
                     <p>興味のあることは、Reactなどのフレームワークや、UI/UXデザインです</p>
-                    <p>笑うと目が消えるってよく言われます。😄</p>
-                </div>
-                <div class="face-slider">
-                    <marquee behavior="scroll" direction="" scrollamount="8" scrolldelay="70"><img src="images/face.png" alt="kao" ></marquee>
+                    <p>笑うと目が消えるってよく言われます。</p>
                 </div>
                 <dl class="line-left">
                     <dt>2022年</dt>
@@ -131,18 +128,6 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
                                 <p>GitHubは<a href="https://github.com/mizuharu1635/harukigram.git" target="_blank">こちら</a></p>
                             </div>
                         </article>
-                        <!-- <article class="works">
-                            <div class="work">
-                                <a href="#" target="_blank"><img src="images/portfolio-photo1.webp" alt="写真3"></a>
-                            </div>
-                            <div class="caption">
-                                <p>タイトル</p>
-                                <p>使用した言語</p>
-                                <p>HTML, CSS, JavaScript</p>
-                                <p>制作時間:〇時間</p>
-                                <p>GitHubは<a href="https://github.com/mizuharu1635/Portfolio.git" target="_blank">こちら</a></p>
-                            </div>
-                        </article> -->
                     </div>
                 </div>
             </section>
@@ -346,8 +331,7 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
                     <?php
                     if ($intMode == MODE_INITIAL || $intMode == MODE_REDISP) {
                     //  初期モード、再表示モードの場合
-
-                    //  if($intMode == MODE_INITIAL){ ?>
+                     ?>
                     <!-- 入力画面 -->
                     <form action="#Contact" method="post">
                         <div class="flex">
@@ -411,7 +395,7 @@ if ($intMode == MODE_CONFIRM || $intMode == MODE_REDISP || $intMode == MODE_REGI
                     
                     <!-- 完了画面 -->
                     <h1>送信しました。メッセージありがとうございました。<br></h1>
-                    <a href="index.php" class="return-btn">入力に戻る</a>
+                    <a href="index.php" class="return-btn">topに戻る</a>
 
                     <?php
                     }
